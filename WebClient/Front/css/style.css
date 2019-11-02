@@ -1,3 +1,5 @@
+/* 全ページ共通 */
+
 body{
     text-align: center;
     margin:0;
@@ -7,6 +9,18 @@ header{
     width:100vw;
     height:8vh;
 }
+
+footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 10vh;
+    width: 100vw;
+    border-top:1px solid #c0c0c0;
+}
+
+/* carender.html */
+
 table{
     table-layout: fixed;
     width: 100%;
@@ -34,7 +48,6 @@ table th,td{
 
 .carender{
     margin:0 5%;
-    height:80vh;
 }
 
 .month-wrapper{
@@ -65,13 +78,13 @@ table th,td{
     width:80vw;
 }
 
-.check{
-    font-size:10px;
+
+/* circle.html */
+
+.circle{
+    color:#F6CC59;
+    width: 100px;/*幅*/
+	height: 100px;/*高さ*/
+	border-radius: 50%;/*角丸*/
 }
 
-
-footer{
-    height: 8vh;
-    width: 100vw;
-    border-top:1px solid #c0c0c0;
-}
