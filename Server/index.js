@@ -4,11 +4,12 @@ const pcap = require('pcap');
 const MACADDR = require('./macAddr.js');
 const Database = require("nedb");
 require('date-utils');
+const obnizcode = reqire('./obnizcode.js'); 
 
 const db = new Database({ filename: "datedata.db" });
 
 const app = express();
-const obniz = new Obniz("4485-7987");
+const obniz = new Obniz(obnizcode);
 
 //Obnizのコントロール
 let flagHave = false;//ものを持っているかいないか
