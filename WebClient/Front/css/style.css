@@ -1,0 +1,73 @@
+body{
+    text-align: center;
+    margin:0;
+}
+header{
+    background: #F6CC59;
+    width:100vw;
+    height:8vh;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+    text-align:center;
+    border-collapse: collapse;
+}
+
+table td{
+    padding-top:5px;
+    vertical-align: top;
+    height: 60px;
+    font-weight: 200;
+}
+table th,td{
+	border-bottom:1px solid #c0c0c0;
+}
+
+.weeks{
+    font-size:14px; 
+}
+
+.weeks th{
+    padding-bottom:13px;
+}
+
+.carender{
+    margin:0 5%;
+    height:84vh;
+}
+
+.month-wrapper p{
+    display: inline-block;
+}
+
+.month{
+    font-size:20px;
+    font-weight: bold;
+    padding:0 10px;
+}
+
+.year{
+    color: #C9C9C9;
+    font-size:14px;
+}
+
+.next{
+    color: #C9C9C9;
+}
+
+.yearmonth{
+    display: inline-block;
+    width:80vw;
+}
+
+.check{
+    font-size:10px;
+}
+
+
+footer{
+    height: 8vh;
+    width: 100vw;
+    border-top:1px solid #c0c0c0;
+}
