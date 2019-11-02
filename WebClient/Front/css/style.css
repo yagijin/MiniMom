@@ -1,8 +1,22 @@
+@font-face {
+    font-family: "GenShinGothic";
+    src: url("../font/GenShinGothic-Bold.ttf") format("TrueType");
+    font-weight: 200;
+    font-style: bold;
+}
+@font-face {
+    font-family: "GenShinGothic";
+    src: url("../font/GenShinGothic-Medium.ttf") format("TrueType");
+    font-weight: 100;
+    font-style: medium;
+}
+
 /* 全ページ共通 */
 
 body{
     text-align: center;
     margin:0;
+    font-family: "GenShinGothic";
 }
 header{
     background: #F6CC59;
@@ -17,7 +31,30 @@ footer{
     height: 10vh;
     width: 100vw;
     border-top:1px solid #c0c0c0;
+    text-align: center;
 }
+
+
+.icon-wrapper{
+    display: inline-block;
+    vertical-align: top;
+    margin:3% 10%;
+}
+
+.icon-wrapper p{
+    margin:0;
+    font-size:10px;
+    transform: scale(0.6);
+}
+
+#icon1{
+    width:30%;
+}
+
+#icon2{
+    width:35%;
+}
+
 
 /* carender.html */
 
@@ -26,13 +63,14 @@ table{
     width: 100%;
     text-align:center;
     border-collapse: collapse;
+    
 }
 
 table td{
     padding-top:5px;
     vertical-align: top;
-    height: 60px;
-    font-weight: 200;
+    height: 8vh;
+    font-weight: 100;
 }
 table th,td{
 	border-bottom:1px solid #c0c0c0;
@@ -44,10 +82,12 @@ table th,td{
 
 .weeks th{
     padding-bottom:13px;
+    font-weight: 200;
 }
 
 .carender{
     margin:0 5%;
+    color: #3c3c3c;
 }
 
 .month-wrapper{
@@ -60,7 +100,7 @@ table th,td{
 
 .month{
     font-size:20px;
-    font-weight: bold;
+    font-weight: 200;
     padding:0 10px;
 }
 
@@ -79,12 +119,97 @@ table th,td{
 }
 
 
+
+
 /* circle.html */
 
-.circle{
-    color:#F6CC59;
-    width: 100px;/*幅*/
-	height: 100px;/*高さ*/
-	border-radius: 50%;/*角丸*/
+.shelf-img{
+    width:80vw;
+    margin:5% 0;
 }
+
+.circle1 {
+    z-index: 9999;
+    background: #2998ce;
+    border: 2px solid #2998ce;
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .circle2 {
+    z-index: 9999;
+    background: #2998ce;
+    border: 2px solid #2998ce;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .circle3 {
+    z-index: 9999;
+    background: #2998ce;
+    border: 2px solid #2998ce;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(0.1);
+      opacity: 0.0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(0.1);
+      opacity: 0.0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: scale(0.7);
+      opacity: 0;
+    }
+  }
 
