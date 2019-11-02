@@ -34,7 +34,11 @@ table th,td{
 
 .carender{
     margin:0 5%;
-    height:84vh;
+    height:80vh;
+}
+
+.month-wrapper{
+    margin:3vh 0;
 }
 
 .month-wrapper p{
