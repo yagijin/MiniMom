@@ -1,11 +1,11 @@
-const Datastore = require('nedb');
 const express = require('express');
 const Obniz = require('obniz');
 const pcap = require('pcap');
 const MACADDR = require('./macAddr.js');
-const data = require('./data.js');
+const Database = require("nedb");
+require('date-utils');
 
-let dummyData = data.dummyData;
+const db = new Database({ filename: "datedata.db" });
 
 const app = express();
 const obniz = new Obniz("4485-7987");
@@ -16,6 +16,32 @@ let flagExist = true;//家にいるかいないか
 let flagExistBefore = true;
 let flagAleat = false;//アラート中かどうか
 let num = 0;
+
+function recordtodatabase() {
+    //データベースに記録
+    let month = new Date().toFormat("MM");
+    let day = new Date().toFormat("DD");
+
+    db.loadDatabase((error) => {
+        if (error !== null) {
+            console.error(error);
+        }
+        console.log("load database completed.");
+    });
+    
+    db.find({ "key" : 1 }, (error, docs) => {
+        const index = docs[0].alertDays[month].findIndex(item => item === parseInt(day));
+        if(index === -1){//dayが無かった場合追加
+            const query = { key: 1 };
+            const update = {
+                $push: { alertDays : parseInt(day) }
+            };
+            const options = {};
+            db.update(query, update, options, (error, numOfDocs) => {
+            });
+        }
+    });
+}
 
 obniz.onconnect = async function () {
     var gp2y0a21yk0f;
@@ -29,7 +55,8 @@ obniz.onconnect = async function () {
         if(flagAleat){
             if(num > 10){
                 flagAleat = false;
-                //鳴ったことを記録する%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //鳴ったことを記録する
+                recordtodatabase();
             }
         }else if(flagHave&&flagExist){//もっていている
             if(num > 50){
@@ -70,23 +97,28 @@ function delayms(timeMS) {
 }
 
 app.get('/api/v1/getdata', (req, res) => {
-    res.json(dummyData);
+    db.loadDatabase((error) => {
+        if (error !== null) {
+            console.error(error);
+        }
+        console.log("load database completed.");
+    });
+    
+    db.find({ "key" : 1 }, (error, docs) => {
+        res.json(docs[0].alertDays);
+        //console.log(docs[0].alertDays["10"]);
+    });
 });
 
 app.listen(3000, () => console.log('Listening on port 3000'));
 
-
-/**
- * MACアドレスの比較
- * @param {[]int} arr 比較するMACアドレス
- */
 function compareArray(arr) {
   for (var i = 0;i < targetMacAddr.length;i++) {
     if (targetMacAddr[i] != arr[i]) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
 const NET_INTERFACE = 'wlan0';
@@ -97,22 +129,18 @@ let pcapSession = pcap.createSession(NET_INTERFACE, "arp")
 
 //ターゲットが帰って来たら
 function targetReturn () {
-    //データベースに記録
-    const day = "2019/10/05";
-    const index = dummyData[0].alertDays.findIndex(item => item === day);
-    if(index === -1){//dayが無かった場合追加
-        dummyData[0].alertDays.push(day);
-    }
+    
 }
 
 pcapSession.on('packet', function (raw_packet) {
   let packet = pcap.decode.packet(raw_packet);
-  let sourceMacAddr = packet["payload"]["shost"]["addr"]
+  let sourceMacAddr = packet["payload"]["shost"]["addr"];
 
   console.log(sourceMacAddr);
   // TargetのMACアドレスと一致した時
   if (compareArray(sourceMacAddr)) {
     flagExist = true;
+    //targetReturn();
     console.log("FindTarget");
   }
 })
