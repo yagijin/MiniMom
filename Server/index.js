@@ -9,14 +9,23 @@ const obnizcode = require('./obnizcode.js');
 const db = new Database({ filename: "datedata.db" });
 
 const app = express();
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 const obniz = new Obniz(obnizcode);
 
 //Obnizのコントロール
-let flagHave = true;//ものを持っているかいないか
+let flagHave = false;//ものを持っているかいないか
 let flagExist = true;//家にいるかいないか
-let flagExistBefore = true;
-let flagAleat = true;//アラート中かどうか
+let flagAleat = false;//アラート中かどうか
 let num = 0;
+let diff = 0;
+let t1 = new Date();
+let t2 = 0; 
 
 function recordtodatabase() {
     //データベースに記録
@@ -54,26 +63,50 @@ obniz.onconnect = async function () {
     await delayms(500);
     //flagExistは外部から制御
     while (true) {
-        if(!(flagExistBefore==flagExist)){//前回から変わったら初期化
-            num = 0;
-        }
         if(flagAleat){
-            if(num > 10){
+            if(num > 5){
                 flagAleat = false;
+                flagHave = false;
                 //鳴ったことを記録する
                 recordtodatabase();
+                console.log("Alert is Done");
+                num = 0;
+                speaker.stop();
             }
         }else if(flagHave&&flagExist){//もっていている
-            if(num > 50){
+            t2 = new Date();
+            diff = t2 - t1;
+            console.log("this is diff:"+diff)
+            if(num > 10){
+                flagHave = false;
+                num = 0;
+            }
+            if(diff>5000){
                 flagAleat = true;
+                t2 = 0;
+                t1 = 0;
+                num = 0;
+                diff = 0;
             }
         }else if(flagHave&&!flagExist){//もってていない
             //何もしない
+            num = 0;
         }else if(!flagHave&&flagExist){//持って無くている
             if(num > 10){//持ち出したらflagHaveを変える
                 flagHave = true;
                 flagExist = false;
                 console.log("item has gone");
+                num = 0;
+                
+                //対応していないネットワークの場合の動作確認用
+/*
+                setTimeout(()=> {
+                    flagExist=true;
+                    t1 = new Date();
+                    console.log("FindTarget");
+                }, 10000)
+*/
+
             }
         }else if(!flagHave&&!flagExist){//持って無くていない
             //何もしない
@@ -83,9 +116,7 @@ obniz.onconnect = async function () {
             //アラートを鳴らす処理を書く  
             await delayms(0);      
             speaker.play(1000); 
-            await obniz.wait(100);
-            speaker.stop();
-            console.log("Alerting");
+            
         }
 
         await delayms(0);
@@ -94,7 +125,6 @@ obniz.onconnect = async function () {
         if ((flagHave ? (await gp2y0a21yk0f.getWait() <= 300) : (await gp2y0a21yk0f.getWait() > 300))) {
             num = (typeof num == 'number' ? num : 0) + 1;
         }
-        flagExistBefore = flagExist;
         await delayms(50);
     }
 }
@@ -116,7 +146,7 @@ app.get('/api/v1/getdata', (req, res) => {
     });
     
     db.find({ "key" : 1 }, (error, docs) => {
-        res.json(docs[0].alertDays.sort());
+        res.json(docs[0].alertDays);
         //console.log(docs[0].alertDays["10"]);
     });
 });
@@ -151,6 +181,7 @@ pcapSession.on('packet', function (raw_packet) {
   if (compareArray(sourceMacAddr)) {
     flagExist = true;
     //targetReturn();
+    t1 = new Date();
     console.log("FindTarget");
   }
 })
