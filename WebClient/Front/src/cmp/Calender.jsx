@@ -62,25 +62,36 @@ class Calender extends Component {
     }
 
     render(){
-    /*
-        var forday = () => {
-            var body = "";
-            var daycount = 0; 
+        // var forday = () => {
+        //     var body;
+        //     var daycount = 0; 
 
-            for(var i=0; i < 5; i++){
-                body += '<tr>'
-                for(var j=0; j < 7; j++){
-                    body += '<td>' + this.state.days[daycount] + '<td>';
-                    daycount ++;
-                }
-                body += '</tr>'
+        //     for(var i=0; i < 5; i++){
+        //         body += <tr>
+        //         for(var j=0; j < 7; j++){
+        //             body += <td> + this.state.days[daycount] + </td>;
+        //             daycount ++;
+        //         }
+        //         body += </tr>
+        //     }
+
+        //     return body;
+        // }
+
+        // var forday = <tr><td>test</td></tr>;
+
+        var forday = [];
+        var count = 0;
+        for(var i = 0; i < 5; i++){
+            var tds = [];
+            for(var j = 0; j < 7; j++){
+                tds.push(<td>{this.state.days[count]}</td>);
+                count ++;
             }
 
-            return body;
+            forday.push(<tr>{tds}</tr>);
         }
-    */
 
-        var forday = 'test';
 
         return(
             <div className="carender">
