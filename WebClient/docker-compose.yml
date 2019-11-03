@@ -1,0 +1,10 @@
+version: '3'
+services:
+  front:
+    build: ./front
+    command: yarn start
+    volumes:
+      - ./front:/app_name
+    ports:
+      - 3000:3000
+    tty: true

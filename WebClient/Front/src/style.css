@@ -1,154 +1,155 @@
 @font-face {
     font-family: "GenShinGothic";
-    src: url("../font/GenShinGothic-Bold.ttf") format("TrueType");
+    src: url("./font/GenShinGothic-Bold.ttf") format("TrueType");
     font-weight: 200;
     font-style: bold;
 }
+
 @font-face {
     font-family: "GenShinGothic";
-    src: url("../font/GenShinGothic-Medium.ttf") format("TrueType");
+    src: url("./font/GenShinGothic-Medium.ttf") format("TrueType");
     font-weight: 100;
     font-style: medium;
 }
 
+
 /* 全ページ共通 */
 
-body{
+body {
     text-align: center;
-    margin:0;
+    margin: 0;
     font-family: "GenShinGothic";
 }
-header{
+
+header {
     background: #F6CC59;
-    width:100vw;
-    height:8vh;
+    width: 100vw;
+    height: 8vh;
     position: relative;
 }
 
 .header-logo {
     position: absolute;
-    top:15%;
+    top: 15%;
     left: 42%;
-    width:20%;
+    width: 20%;
 }
 
-
-footer{
+footer {
     position: absolute;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
     height: 10vh;
     width: 100vw;
-    border-top:1px solid #c0c0c0;
+    border-top: 1px solid #c0c0c0;
     text-align: center;
 }
 
-
-.icon-wrapper{
+.icon-wrapper {
     display: inline-block;
     vertical-align: top;
-    margin:3% 10%;
+    margin: 3% 10%;
 }
 
-.icon-wrapper p{
-    margin:0;
-    font-size:10px;
+.icon-wrapper p {
+    margin: 0;
+    font-size: 10px;
     transform: scale(0.6);
 }
 
-#icon1{
-    width:30%;
+#icon1 {
+    width: 30%;
 }
 
-#icon2{
-    width:35%;
+#icon2 {
+    width: 35%;
 }
 
-.select{
+.select {
     color: #4D64EC;
 }
 
-.no-select{
+.no-select {
     color: #979797;
 }
 
 
 /* carender.html */
 
-table{
+table {
     table-layout: fixed;
     width: 100%;
-    text-align:center;
+    text-align: center;
     border-collapse: collapse;
-    
 }
 
-table td{
-    padding-top:5px;
+table td {
+    padding-top: 5px;
     vertical-align: top;
     height: 7vh;
     font-weight: 100;
 }
-table th,td{
-	border-bottom:1px solid #c0c0c0;
+
+table th,
+td {
+    border-bottom: 1px solid #c0c0c0;
 }
 
-.weeks{
-    font-size:14px; 
+.weeks {
+    font-size: 14px;
 }
 
-.weeks th{
-    padding-bottom:13px;
+.weeks th {
+    padding-bottom: 13px;
     font-weight: 200;
 }
 
-.carender{
-    margin:0 5%;
+.carender {
+    margin: 0 5%;
     color: #3c3c3c;
 }
 
-.month-wrapper{
-    margin:3vh 0;
+.month-wrapper {
+    margin: 3vh 0;
 }
 
-.month-wrapper p{
+.month-wrapper p {
     display: inline-block;
 }
 
-.month{
-    font-size:20px;
+.month {
+    font-size: 20px;
     font-weight: 200;
-    padding:0 10px;
+    padding: 0 10px;
 }
 
-.year{
+.year {
     color: #C9C9C9;
-    font-size:14px;
+    font-size: 14px;
 }
 
-.next{
+.next {
     color: #C9C9C9;
 }
 
-.yearmonth{
+.yearmonth {
     display: inline-block;
-    width:80vw;
+    width: 80vw;
 }
 
-.calender-icon{
-    width:14px;
+.calender-icon {
+    width: 14px;
 }
-
 
 
 /* check.html */
 
-.shelf-wrapper{
-    margin:10% 5%;
+.shelf-wrapper {
+    margin: 10% 5%;
 }
 
-.shelf-img{
-    width:80vw; 
+.shelf-img {
+    width: 80vw;
 }
 
 .circle1 {
@@ -168,9 +169,9 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  .circle2 {
+.circle2 {
     z-index: 9999;
     background: #2998ce;
     border: 2px solid #2998ce;
@@ -187,9 +188,9 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  .circle3 {
+.circle3 {
     z-index: 9999;
     background: #2998ce;
     border: 2px solid #2998ce;
@@ -206,9 +207,9 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  .circle4 {
+.circle4 {
     z-index: 9999;
     background: #F6CC59;
     border: 2px solid #F6CC59;
@@ -225,9 +226,9 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  .circle5 {
+.circle5 {
     z-index: 9999;
     background: #F6CC59;
     border: 2px solid #F6CC59;
@@ -244,9 +245,9 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  .circle6 {
+.circle6 {
     z-index: 9999;
     background: #F6CC59;
     border: 2px solid #F6CC59;
@@ -263,70 +264,69 @@ table th,td{
     -webkit-animation: pulsate 1.5s ease-out;
     -webkit-animation-iteration-count: infinite;
     -webkit-transform: translate(-50%, -50%);
-  }
+}
 
-  @keyframes pulsate {
+@keyframes pulsate {
     0% {
-      transform: scale(0.1);
-      opacity: 0.0;
+        transform: scale(0.1);
+        opacity: 0.0;
     }
     50% {
-      opacity: 0.5;
+        opacity: 0.5;
     }
     100% {
-      transform: scale(0.7);
-      opacity: 0;
+        transform: scale(0.7);
+        opacity: 0;
     }
-  }
+}
 
-  @-webkit-keyframes pulsate {
+@-webkit-keyframes pulsate {
     0% {
-      -webkit-transform: scale(0.1);
-      opacity: 0.0;
+        -webkit-transform: scale(0.1);
+        opacity: 0.0;
     }
     50% {
-      opacity: 0.5;
+        opacity: 0.5;
     }
     100% {
-      -webkit-transform: scale(0.7);
-      opacity: 0;
+        -webkit-transform: scale(0.7);
+        opacity: 0;
     }
-  }
+}
 
+.legend {
+    display: inline-block;
+    width: 20%;
+    margin: 0 4%;
+}
 
-  .legend{
-      display: inline-block;
-      width:20%;
-      margin:0 4%;
-  }
+.legend-wrapper img {
+    display: block;
+    margin: 10% 60% 3% 10%;
+    float: left;
+    width: 30%;
+}
 
-  .legend-wrapper img{
-      display: block;
-      margin:10% 60% 3% 10%;
-      float: left;
-    width:30%;
-  }
+.squares {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
 
-  .squares{
-      display: inline-block;
-      width:12px;
-      height: 12px;
-  }
-
-  .legend span{
+.legend span {
     color: #3c3c3c;
-      font-size: 12px;
-      font-weight: 100;
-  }
+    font-size: 12px;
+    font-weight: 100;
+}
 
-  .square1{
+.square1 {
     background: #485FE5;
-  }
+}
 
-  .square2{
-    background:#9F95A1;
-  }
+.square2 {
+    background: #9F95A1;
+}
 
-  .square3{
+.square3 {
     background: #F6CC59;
-  }
+}
