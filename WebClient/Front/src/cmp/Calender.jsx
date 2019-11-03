@@ -88,7 +88,16 @@ class Calender extends Component {
         for(var i = 0; i < 5; i++){
             var tds = [];
             for(var j = 0; j < 7; j++){
-                tds.push(<td>{this.state.days[count]}</td>);
+                var d = this.state.days[count];
+
+                if (propsdata.indexOf(d+'') >= 0) {
+                    //画像出す
+                    tds.push(<td>{d}<br/><img class="calender-icon" src={Maru}/></td>);
+                } else {
+                    //フツウ
+                    tds.push(<td>{d}</td>);
+                }
+                
                 count ++;
             }
 
