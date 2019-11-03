@@ -10,14 +10,15 @@ class CalenderPage extends Component{
         }
     }
 
-    handleChange = () => {
-        this.props.history.push('/Rack');
+    componentDidMount = () => {
+        console.log('カレンダーが受け取ったデータ:');
+        console.log(this.props.data);
     }
 
     render(){
         return(
             <div>
-                <Calender/>
+                <Calender data={this.props.data}/>
             </div>
         );
     }

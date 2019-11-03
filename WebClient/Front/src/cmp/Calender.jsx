@@ -82,6 +82,9 @@ class Calender extends Component {
 
         var forday = [];
         var count = 0;
+        const propsdata = this.props.data[this.state.month + ''];
+        console.log(propsdata);
+
         for(var i = 0; i < 5; i++){
             var tds = [];
             for(var j = 0; j < 7; j++){

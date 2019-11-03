@@ -10,7 +10,10 @@ class MainContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data: {}
+            data: {
+                '9': ['15', '20', '21'],
+                '11': ['1', '2', '3']
+            }
         };
     }
 
