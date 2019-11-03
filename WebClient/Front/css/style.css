@@ -55,6 +55,14 @@ footer{
     width:35%;
 }
 
+.select{
+    color: #4D64EC;
+}
+
+.no-select{
+    color: #979797;
+}
+
 
 /* carender.html */
 
@@ -69,7 +77,7 @@ table{
 table td{
     padding-top:5px;
     vertical-align: top;
-    height: 8vh;
+    height: 7vh;
     font-weight: 100;
 }
 table th,td{
@@ -118,14 +126,20 @@ table th,td{
     width:80vw;
 }
 
+.calender-icon{
+    width:14px;
+}
 
 
 
-/* circle.html */
+/* check.html */
+
+.shelf-wrapper{
+    margin:10% 5%;
+}
 
 .shelf-img{
-    width:80vw;
-    margin:5% 0;
+    width:80vw; 
 }
 
 .circle1 {
@@ -138,8 +152,8 @@ table th,td{
     margin: -15px 0 0 -15px;
     opacity: 0;
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 350px;
+    left: 200px;
     animation: pulsate 1.5s ease-out;
     animation-iteration-count: infinite;
     -webkit-animation: pulsate 1.5s ease-out;
@@ -157,8 +171,8 @@ table th,td{
     margin: -15px 0 0 -15px;
     opacity: 0;
     position: absolute;
-    top: 75px;
-    left: 75px;
+    top: 375px;
+    left: 225px;
     animation: pulsate 1.5s ease-out;
     animation-iteration-count: infinite;
     -webkit-animation: pulsate 1.5s ease-out;
@@ -176,8 +190,65 @@ table th,td{
     margin: -15px 0 0 -15px;
     opacity: 0;
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 400px;
+    left: 250px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .circle4 {
+    z-index: 9999;
+    background: #F6CC59;
+    border: 2px solid #F6CC59;
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 200px;
+    left: 65px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .circle5 {
+    z-index: 9999;
+    background: #F6CC59;
+    border: 2px solid #F6CC59;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 225px;
+    left: 90px;
+    animation: pulsate 1.5s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .circle6 {
+    z-index: 9999;
+    background: #F6CC59;
+    border: 2px solid #F6CC59;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 250px;
+    left: 115px;
     animation: pulsate 1.5s ease-out;
     animation-iteration-count: infinite;
     -webkit-animation: pulsate 1.5s ease-out;
@@ -213,3 +284,40 @@ table th,td{
     }
   }
 
+
+  .legend{
+      display: inline-block;
+      width:20%;
+      margin:0 4%;
+  }
+
+  .legend-wrapper img{
+      display: block;
+      margin:10% 60% 3% 10%;
+      float: left;
+    width:30%;
+  }
+
+  .squares{
+      display: inline-block;
+      width:12px;
+      height: 12px;
+  }
+
+  .legend span{
+    color: #3c3c3c;
+      font-size: 12px;
+      font-weight: 100;
+  }
+
+  .square1{
+    background: #485FE5;
+  }
+
+  .square2{
+    background:#9F95A1;
+  }
+
+  .square3{
+    background: #F6CC59;
+  }
