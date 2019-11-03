@@ -10,15 +10,12 @@ class MainContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data: {
-                '9': ['15', '20', '21'],
-                '11': ['1', '2', '3']
-            }
+            data: {}
         };
     }
 
     componentDidMount(){
-        axios.get('https://b8eaa01a.ngrok.io/api/v1/getdata')
+        axios.get('https://3977cebb.ngrok.io/api/v1/getdata')
         .then((results) => {
           console.log(results)
           this.setState({data: results.data})

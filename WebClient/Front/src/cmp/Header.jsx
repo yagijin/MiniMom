@@ -5,7 +5,7 @@ class Header extends Component {
     render(){
         return(
             <header>
-                <img class="header-logo" src={Logo}/>
+                <img className="header-logo" src={Logo}/>
             </header>
         );
     }

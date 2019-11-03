@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Maru from '../images/maru.png';
+import Batsu from '../images/batsu.png';
 
 class Calender extends Component {
     constructor(props){
@@ -82,7 +83,10 @@ class Calender extends Component {
 
         var forday = [];
         var count = 0;
-        const propsdata = this.props.data[this.state.month + ''];
+        console.log("hogheoge");
+        console.log(this.props);
+        const propsdata = this.props.data[this.state.month];
+        if (propsdata ){
         console.log(propsdata);
 
         for(var i = 0; i < 5; i++){
@@ -90,18 +94,19 @@ class Calender extends Component {
             for(var j = 0; j < 7; j++){
                 var d = this.state.days[count];
 
-                if (propsdata.indexOf(d+'') >= 0) {
+                if (propsdata.indexOf(d) >= 0) {
                     //画像出す
-                    tds.push(<td>{d}<br/><img class="calender-icon" src={Maru}/></td>);
+                    tds.push(<td key={d}>{d}<br/><img class="calender-icon" src={Maru}/></td>);
                 } else {
                     //フツウ
-                    tds.push(<td>{d}</td>);
+                    tds.push(<td key={d}>{d}</td>);
                 }
                 
                 count ++;
             }
 
             forday.push(<tr>{tds}</tr>);
+        }
         }
 
 

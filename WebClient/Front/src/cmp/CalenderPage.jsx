@@ -11,6 +11,7 @@ class CalenderPage extends Component{
     }
 
     componentDidMount = () => {
+        console.log('描写完了');
         console.log('カレンダーが受け取ったデータ:');
         console.log(this.props.data);
     }
