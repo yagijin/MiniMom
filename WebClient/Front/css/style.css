@@ -22,7 +22,16 @@ header{
     background: #F6CC59;
     width:100vw;
     height:8vh;
+    position: relative;
 }
+
+.header-logo {
+    position: absolute;
+    top:15%;
+    left: 42%;
+    width:20%;
+}
+
 
 footer{
     position: absolute;
