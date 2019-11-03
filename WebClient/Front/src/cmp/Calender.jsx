@@ -6,7 +6,44 @@ class Calender extends Component {
         super(props);
         this.state = {
             month: 11,
-            year: 2019
+            year: 2019,
+            days: [
+                28,
+                29,
+                30,
+                31,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+            ]
         }
     }
 
@@ -25,6 +62,26 @@ class Calender extends Component {
     }
 
     render(){
+    /*
+        var forday = () => {
+            var body = "";
+            var daycount = 0; 
+
+            for(var i=0; i < 5; i++){
+                body += '<tr>'
+                for(var j=0; j < 7; j++){
+                    body += '<td>' + this.state.days[daycount] + '<td>';
+                    daycount ++;
+                }
+                body += '</tr>'
+            }
+
+            return body;
+        }
+    */
+
+        var forday = 'test';
+
         return(
             <div className="carender">
                 <div className="month-wrapper">
@@ -50,53 +107,7 @@ class Calender extends Component {
                             <th>土</th>
                             <th>日</th>
                         </tr>
-                        <tr>
-                            <td>28
-                            <br/><img class="calender-icon" src={Maru}/>
-                            </td>
-                            <td>29</td>
-                            <td>30</td>
-                            <td>31</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                            <td>29</td>
-                            <td>30</td>
-                            <td>1</td>
-                        </tr>
+                        {forday}
                     </tbody>
                 </table>
             </div>

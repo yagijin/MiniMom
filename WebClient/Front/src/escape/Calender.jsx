@@ -1,17 +1,4 @@
 import React, { Component } from 'react';
-import Date from './Date';
-
-function days(props){
-    return <td>{props.day}</td>
-}
-
-function weeks(props){
-    return (
-        <tr>
-            {props.children}
-        </tr>
-    );
-}
 
 class Calender extends Component {
     constructor(props){
@@ -59,7 +46,6 @@ class Calender extends Component {
     }
 
     nextMonth = () => {
-        switch()
         this.setState({month: this.state.month + 1})
         if(this.state.month === 12){
             this.setState({month: this.state.month - 11, year: this.state.year + 1})
