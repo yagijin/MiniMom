@@ -1,7 +1,6 @@
 # MiniMom  
-
+![prize](https://img.shields.io/badge/OthloHack2019-Cookpad賞-F89532.svg)
 ## スマート棚　～設置するだけで片付けの習慣を身に着けよう～  
-### OthloHack2019にてcookpad賞受賞  
 
 ![title](https://user-images.githubusercontent.com/29916489/68082732-75052680-fe63-11e9-9a20-50eaf269ffb0.png)  
 
